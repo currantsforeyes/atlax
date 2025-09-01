@@ -1,0 +1,8 @@
+{
+  "name": "ATLAX",
+  "description": "A user interface for a multiplayer 'Experience' hosting gaming platform, inspired by platforms like Roblox. It allows users to discover, browse, and launch into immersive online games and experiences.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

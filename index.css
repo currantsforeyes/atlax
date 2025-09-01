@@ -1,0 +1,228 @@
+/* Custom CSS Variables for consistent theming */
+:root {
+  --bg-primary: #111827; /* gray-900 */
+  --bg-secondary: #1f2937; /* gray-800 */
+  --bg-tertiary: #374151; /* gray-700 */
+  --text-primary: #f9fafb; /* gray-50 */
+  --text-secondary: #d1d5db; /* gray-300 */
+  --text-muted: #9ca3af; /* gray-400 */
+  --accent-blue: #3b82f6; /* blue-500 */
+  --accent-green: #10b981; /* emerald-500 */
+  --accent-purple: #8b5cf6; /* violet-500 */
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* gray-500 */
+}
+
+/* Custom component styles */
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  border: 1px solid #4b5563;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+/* Navigation styles */
+.nav-item {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.nav-item:hover {
+  background: var(--bg-secondary);
+  transform: translateX(4px);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+  color: white;
+}
+
+/* Experience card styles */
+.experience-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.experience-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-green));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+/* Genre badge styles */
+.genre-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.genre-adventure { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+.genre-roleplay { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+.genre-combat { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.genre-simulation { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+.genre-obby { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+.genre-racing { background: rgba(236, 72, 153, 0.2); color: #ec4899; }
+
+/* Avatar/Profile styles */
+.avatar-ring {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  padding: 2px;
+  border-radius: 9999px;
+}
+
+.avatar-ring img {
+  border: 2px solid var(--bg-primary);
+  border-radius: 9999px;
+}
+
+/* Loading animations */
+.pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Three.js canvas styles */
+.avatar-canvas {
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
+  }
+  
+  .experience-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Text selection */
+::selection {
+  background: var(--accent-blue);
+  color: white;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}

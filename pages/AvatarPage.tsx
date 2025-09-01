@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import type { AvatarItem, AvatarCategory } from '../types';
 import { avatarItems as initialAvatarItems } from '../data';
-import AvatarPreview from '../components/AvatarPreview';
+import CharacterStudio from '../components/CharacterStudio';
 import { Icon } from '../components/Icon';
 import { ICONS } from '../constants';
 import UploadModal from '../components/UploadModal';
@@ -242,7 +242,7 @@ const AvatarPage: React.FC<{ onNavClick: (page: string) => void }> = ({ onNavCli
           <h2 className="text-2xl font-bold mb-4 text-center">Your Avatar</h2>
           <div className="flex-1 min-h-[400px]">
             <ErrorBoundary fallback={<PreviewErrorFallback />}>
-              <AvatarPreview equippedItems={equippedItems} />
+              <CharacterStudio equippedItems={equippedItems} />
             </ErrorBoundary>
           </div>
           <div className="mt-4 flex flex-col items-center gap-4">

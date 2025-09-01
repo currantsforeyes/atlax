@@ -9,16 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.1.1",
-    "three": "0.166.1",
-    "@react-three/fiber": "8.16.8",
-    "@react-three/drei": "9.108.3",
-    "@supabase/supabase-js": "2.44.4",
+    "@m3-org/characterstudio": "https://codeload.github.com/M3-org/CharacterStudio/tar.gz/refs/heads/main",
     "@react-spring/three": "9.7.4",
-    "react-dom": "^19.1.1"
+    "@react-three/drei": "9.108.3",
+    "@react-three/fiber": "8.16.8",
+    "@supabase/supabase-js": "2.44.4",
+    "classnames": "^2.5.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "0.166.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "sass-embedded": "^1.91.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

@@ -5,7 +5,7 @@ import Header from './components/Header';
 import ExperienceDetail from './components/ExperienceDetail';
 import DiscoverPage from './pages/DiscoverPage';
 import HomePage from './pages/HomePage';
-import AvatarPage from './pages/AvatarPage';
+import AvatarPreviewPage from './pages/AvatarPreviewPage';
 import type { Experience } from './types';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import AuthPage from './pages/AuthPage';
@@ -51,7 +51,7 @@ const AppContent: React.FC = () => {
       case 'Discover':
         return <DiscoverPage onExperienceClick={handleExperienceSelect} />;
       case 'Avatar':
-        return <AvatarPage onNavClick={handleNavClick} />;
+        return <AvatarPreviewPage />;
       case 'Auth':
         return <AuthPage />;
       case 'Profile':
